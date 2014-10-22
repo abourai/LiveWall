@@ -1,0 +1,5 @@
+unix6.andrew.cmu.edu 10556
+unix3.andrew.cmu.edu 10553
+unix2.andrew.cmu.edu 10552
+unix7.andrew.cmu.edu 10557
+unix4.andrew.cmu.edu 10554
