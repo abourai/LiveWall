@@ -18,6 +18,7 @@ module.exports = function(router) {
  
   router.post('/upload', function(req, res) {
     uploader.post(req, res, function(obj) {
+      console.log(JSON.stringify(obj));
       res.send(JSON.stringify(obj));
     });
   });

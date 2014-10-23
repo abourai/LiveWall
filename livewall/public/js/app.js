@@ -4,7 +4,8 @@ Dropzone.options.myDropzone = {
     // config
     self.options.addRemoveLinks = true;
     self.options.dictRemoveFile = "Delete";
- 
+     
+
     // load already saved files
     $.get('/upload', function(data) {
       var files = JSON.parse(data).files;
@@ -13,6 +14,7 @@ Dropzone.options.myDropzone = {
         var mockFile = {
           name: files[i].name,
           size: files[i].size,
+          big: false,
           type: 'image/jpeg'
         };
  
@@ -44,6 +46,13 @@ Dropzone.options.myDropzone = {
  
     self.on("queuecomplete", function(progress) {
       $('.meter').delay(999).slideUp(999);
+    });
+    self.on("success", function(file) {
+        // Handle the responseText here. For example, add the text to the preview element:
+        var btn = document.createElement("BUTTON");
+        var t = document.createTextNode("CLICK ME");
+        btn.appendChild(t);
+        file.previewTemplate.appendChild(btn);
     });
  
     // On removing file
