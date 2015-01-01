@@ -14,10 +14,10 @@ Dropzone.options.myDropzone = {
         var mockFile = {
           name: files[i].name,
           size: files[i].size,
-          big: false,
+          big: files[i].big,
           type: 'image/jpeg'
         };
- 
+
         self.options.addedfile.call(self, mockFile);
         self.options.thumbnail.call(self, mockFile, files[i].url);
  
@@ -30,6 +30,7 @@ Dropzone.options.myDropzone = {
     //New file added
     self.on("addedfile", function(file) {
       console.log('new file added ', file);
+      alert('foo');
     });
  
     // Send file starts
